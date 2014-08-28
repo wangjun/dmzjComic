@@ -40,4 +40,4 @@ optional arguments:
 
 另有GUI版可用
 
-附：本脚本借鉴了abcfy2的getComic，项目url：https://github.com/abcfy2/getComic
+注：本脚本借鉴了abcfy2的getComic，项目url：https://github.com/abcfy2/getComic
