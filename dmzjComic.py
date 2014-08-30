@@ -20,7 +20,7 @@ class ErrorCode(Exception):
         return repr(self.code)
 
 def isLegelUrl(url):
-    legalUrl1 = re.compile(r'^http://(manhua|mh).dmzj.com/\w+/?$')
+    legalUrl1 = re.compile(r'^http://(manhua|mh)\.dmzj\.com/\w+/?$')
 
     if legalUrl1.match(url):
         return True
@@ -32,7 +32,7 @@ def getmobileurl(url):
         print('请输入正确的url！具体支持的url请在命令行输入-h|--help参数查看帮助文档。')
         raise ErrorCode(1)
 
-    url_test = re.compile(r'^http://manhua.dmzj.com/\w+/?$')
+    url_test = re.compile(r'^http://manhua\.dmzj\.com/\w+/?$')
     if url_test.match(url):
         url = url.replace('manhua', 'mh')
     
@@ -44,9 +44,9 @@ def getContent(url):
     comicName = name_re.findall(comic.text)[0]
     comicName = comicName.strip()
     if '为此给各位漫友带来的不便，敬请谅解！' in comic.text:
-        intrd_re = re.compile(r'</span><br><br>\n*(.+)\n*<p>')
+        intrd_re = re.compile(r'</span><br><br>\n*(.+)\n*.*?<p>')
     else:
-        intrd_re = re.compile(r'<p>\n*(.+)\n*<br/>欢迎在动漫之家漫画网观看')
+        intrd_re = re.compile(r'<p>\n*(.+)\n*.*?<br/>欢迎在动漫之家漫画网观看')
     comicIntrd = intrd_re.findall(comic.text)[0]
     chapterlist_re = re.compile(r'href="(.+?)"\sclass="list_href"\stitle="(.+?)".+?rel="external"')
     chapterlist = chapterlist_re.findall(comic.text)
