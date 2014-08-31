@@ -149,6 +149,7 @@ def main(url, path, lst=None):
                 print('{0:0>3}:'.format(i), contentNameList[i-1], end='\n')
         except Exception:
             print('章节列表包含无法解析的特殊字符\n')
+        comicName = re.sub(r'[\\/"\':*?<>|]', '', comicName)
         comicPath = os.path.join(path, comicName)
         if not os.path.isdir(comicPath):
             os.mkdir(comicPath)
