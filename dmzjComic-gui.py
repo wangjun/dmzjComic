@@ -139,7 +139,7 @@ class DMZJComicDownloader(QWidget):
         selectedChapterList = [ item.row() for item in self.chapterListView.selectedIndexes() ]
 
         path = self.pathLine.text()
-        comicName = self.comicName
+        comicName = re.sub(r'[\\/"\':*?<>|]', '', self.comicName)
 
         comicPath = os.path.join(path, comicName)
 
