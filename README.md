@@ -1,4 +1,4 @@
-dmzj_comic
+dmzjComic
 ==========
 
 Download all comics from manhua.dmzj.com(可下载动漫之家网所有漫画)
@@ -40,4 +40,5 @@ optional arguments:
 
 另有GUI版可用
 
-注：本脚本借鉴了abcfy2的getComic，项目url：https://github.com/abcfy2/getComic
+## 参考
+https://github.com/abcfy2/getComic
